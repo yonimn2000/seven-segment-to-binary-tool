@@ -1,10 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace _7_Segment_to_Binary
+namespace YonatanMankovich.SevenSegmentToBinary
 {
     static class Program
     {
