@@ -28,93 +28,94 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
+            this.middleSegmentBTN = new System.Windows.Forms.Button();
+            this.topLeftSegmentBTN = new System.Windows.Forms.Button();
+            this.bottomLeftSegmentBTN = new System.Windows.Forms.Button();
+            this.bottomSegmentBTN = new System.Windows.Forms.Button();
+            this.bottomRightSegmentBTN = new System.Windows.Forms.Button();
+            this.topRightSegmentBTN = new System.Windows.Forms.Button();
+            this.topSegmentBTN = new System.Windows.Forms.Button();
             this.BinaryTB = new System.Windows.Forms.TextBox();
             this.CopyBTN = new System.Windows.Forms.Button();
             this.pasteBTN = new System.Windows.Forms.Button();
             this.ConstTB = new System.Windows.Forms.TextBox();
+            this.orderLB = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
-            // button1
+            // middleSegmentBTN
             // 
-            this.button1.BackColor = System.Drawing.Color.Black;
-            this.button1.Location = new System.Drawing.Point(28, 108);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 20);
-            this.button1.TabIndex = 0;
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.Button_Click);
+            this.middleSegmentBTN.BackColor = System.Drawing.Color.Black;
+            this.middleSegmentBTN.Location = new System.Drawing.Point(28, 108);
+            this.middleSegmentBTN.Name = "middleSegmentBTN";
+            this.middleSegmentBTN.Size = new System.Drawing.Size(75, 20);
+            this.middleSegmentBTN.TabIndex = 3;
+            this.middleSegmentBTN.UseVisualStyleBackColor = false;
+            this.middleSegmentBTN.Click += new System.EventHandler(this.SegmentButton_Click);
             // 
-            // button2
+            // topLeftSegmentBTN
             // 
-            this.button2.BackColor = System.Drawing.Color.Black;
-            this.button2.Location = new System.Drawing.Point(8, 32);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(20, 75);
-            this.button2.TabIndex = 1;
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.Button_Click);
+            this.topLeftSegmentBTN.BackColor = System.Drawing.Color.Black;
+            this.topLeftSegmentBTN.Location = new System.Drawing.Point(8, 32);
+            this.topLeftSegmentBTN.Name = "topLeftSegmentBTN";
+            this.topLeftSegmentBTN.Size = new System.Drawing.Size(20, 75);
+            this.topLeftSegmentBTN.TabIndex = 0;
+            this.topLeftSegmentBTN.UseVisualStyleBackColor = false;
+            this.topLeftSegmentBTN.Click += new System.EventHandler(this.SegmentButton_Click);
             // 
-            // button3
+            // bottomLeftSegmentBTN
             // 
-            this.button3.BackColor = System.Drawing.Color.Black;
-            this.button3.Location = new System.Drawing.Point(8, 129);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(20, 75);
-            this.button3.TabIndex = 2;
-            this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.Button_Click);
+            this.bottomLeftSegmentBTN.BackColor = System.Drawing.Color.Black;
+            this.bottomLeftSegmentBTN.Location = new System.Drawing.Point(8, 129);
+            this.bottomLeftSegmentBTN.Name = "bottomLeftSegmentBTN";
+            this.bottomLeftSegmentBTN.Size = new System.Drawing.Size(20, 75);
+            this.bottomLeftSegmentBTN.TabIndex = 1;
+            this.bottomLeftSegmentBTN.UseVisualStyleBackColor = false;
+            this.bottomLeftSegmentBTN.Click += new System.EventHandler(this.SegmentButton_Click);
             // 
-            // button4
+            // bottomSegmentBTN
             // 
-            this.button4.BackColor = System.Drawing.Color.Black;
-            this.button4.Location = new System.Drawing.Point(28, 204);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 20);
-            this.button4.TabIndex = 3;
-            this.button4.UseVisualStyleBackColor = false;
-            this.button4.Click += new System.EventHandler(this.Button_Click);
+            this.bottomSegmentBTN.BackColor = System.Drawing.Color.Black;
+            this.bottomSegmentBTN.Location = new System.Drawing.Point(28, 204);
+            this.bottomSegmentBTN.Name = "bottomSegmentBTN";
+            this.bottomSegmentBTN.Size = new System.Drawing.Size(75, 20);
+            this.bottomSegmentBTN.TabIndex = 4;
+            this.bottomSegmentBTN.UseVisualStyleBackColor = false;
+            this.bottomSegmentBTN.Click += new System.EventHandler(this.SegmentButton_Click);
             // 
-            // button5
+            // bottomRightSegmentBTN
             // 
-            this.button5.BackColor = System.Drawing.Color.Black;
-            this.button5.Location = new System.Drawing.Point(103, 129);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(20, 75);
-            this.button5.TabIndex = 4;
-            this.button5.UseVisualStyleBackColor = false;
-            this.button5.Click += new System.EventHandler(this.Button_Click);
+            this.bottomRightSegmentBTN.BackColor = System.Drawing.Color.Black;
+            this.bottomRightSegmentBTN.Location = new System.Drawing.Point(103, 129);
+            this.bottomRightSegmentBTN.Name = "bottomRightSegmentBTN";
+            this.bottomRightSegmentBTN.Size = new System.Drawing.Size(20, 75);
+            this.bottomRightSegmentBTN.TabIndex = 6;
+            this.bottomRightSegmentBTN.UseVisualStyleBackColor = false;
+            this.bottomRightSegmentBTN.Click += new System.EventHandler(this.SegmentButton_Click);
             // 
-            // button6
+            // topRightSegmentBTN
             // 
-            this.button6.BackColor = System.Drawing.Color.Black;
-            this.button6.Location = new System.Drawing.Point(103, 32);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(20, 75);
-            this.button6.TabIndex = 5;
-            this.button6.UseVisualStyleBackColor = false;
-            this.button6.Click += new System.EventHandler(this.Button_Click);
+            this.topRightSegmentBTN.BackColor = System.Drawing.Color.Black;
+            this.topRightSegmentBTN.Location = new System.Drawing.Point(103, 32);
+            this.topRightSegmentBTN.Name = "topRightSegmentBTN";
+            this.topRightSegmentBTN.Size = new System.Drawing.Size(20, 75);
+            this.topRightSegmentBTN.TabIndex = 5;
+            this.topRightSegmentBTN.UseVisualStyleBackColor = false;
+            this.topRightSegmentBTN.Click += new System.EventHandler(this.SegmentButton_Click);
             // 
-            // button7
+            // topSegmentBTN
             // 
-            this.button7.BackColor = System.Drawing.Color.Black;
-            this.button7.Location = new System.Drawing.Point(28, 12);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(75, 20);
-            this.button7.TabIndex = 6;
-            this.button7.UseVisualStyleBackColor = false;
-            this.button7.Click += new System.EventHandler(this.Button_Click);
+            this.topSegmentBTN.BackColor = System.Drawing.Color.Black;
+            this.topSegmentBTN.Location = new System.Drawing.Point(28, 12);
+            this.topSegmentBTN.Name = "topSegmentBTN";
+            this.topSegmentBTN.Size = new System.Drawing.Size(75, 20);
+            this.topSegmentBTN.TabIndex = 2;
+            this.topSegmentBTN.UseVisualStyleBackColor = false;
+            this.topSegmentBTN.Click += new System.EventHandler(this.SegmentButton_Click);
             // 
             // BinaryTB
             // 
             this.BinaryTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BinaryTB.Location = new System.Drawing.Point(44, 230);
+            this.BinaryTB.Location = new System.Drawing.Point(165, 12);
             this.BinaryTB.MaxLength = 7;
             this.BinaryTB.Name = "BinaryTB";
             this.BinaryTB.Size = new System.Drawing.Size(79, 29);
@@ -125,9 +126,9 @@
             // CopyBTN
             // 
             this.CopyBTN.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CopyBTN.Location = new System.Drawing.Point(8, 265);
+            this.CopyBTN.Location = new System.Drawing.Point(129, 47);
             this.CopyBTN.Name = "CopyBTN";
-            this.CopyBTN.Size = new System.Drawing.Size(55, 25);
+            this.CopyBTN.Size = new System.Drawing.Size(115, 24);
             this.CopyBTN.TabIndex = 8;
             this.CopyBTN.Text = "Copy";
             this.CopyBTN.UseVisualStyleBackColor = true;
@@ -136,9 +137,9 @@
             // pasteBTN
             // 
             this.pasteBTN.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pasteBTN.Location = new System.Drawing.Point(68, 265);
+            this.pasteBTN.Location = new System.Drawing.Point(129, 77);
             this.pasteBTN.Name = "pasteBTN";
-            this.pasteBTN.Size = new System.Drawing.Size(55, 25);
+            this.pasteBTN.Size = new System.Drawing.Size(115, 24);
             this.pasteBTN.TabIndex = 9;
             this.pasteBTN.Text = "Paste";
             this.pasteBTN.UseVisualStyleBackColor = true;
@@ -148,33 +149,48 @@
             // 
             this.ConstTB.Enabled = false;
             this.ConstTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ConstTB.Location = new System.Drawing.Point(8, 230);
+            this.ConstTB.Location = new System.Drawing.Point(129, 12);
             this.ConstTB.MaxLength = 10;
             this.ConstTB.Name = "ConstTB";
             this.ConstTB.Size = new System.Drawing.Size(37, 29);
             this.ConstTB.TabIndex = 10;
             this.ConstTB.Text = "0b0";
             // 
+            // orderLB
+            // 
+            this.orderLB.AllowDrop = true;
+            this.orderLB.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.orderLB.FormattingEnabled = true;
+            this.orderLB.ItemHeight = 16;
+            this.orderLB.Location = new System.Drawing.Point(129, 108);
+            this.orderLB.Name = "orderLB";
+            this.orderLB.Size = new System.Drawing.Size(115, 116);
+            this.orderLB.TabIndex = 12;
+            this.orderLB.DragDrop += new System.Windows.Forms.DragEventHandler(this.OrderLB_DragDrop);
+            this.orderLB.DragOver += new System.Windows.Forms.DragEventHandler(this.OrderLB_DragOver);
+            this.orderLB.MouseDown += new System.Windows.Forms.MouseEventHandler(this.OrderLB_MouseDown);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(131, 295);
+            this.ClientSize = new System.Drawing.Size(256, 234);
+            this.Controls.Add(this.orderLB);
             this.Controls.Add(this.ConstTB);
             this.Controls.Add(this.pasteBTN);
             this.Controls.Add(this.CopyBTN);
             this.Controls.Add(this.BinaryTB);
-            this.Controls.Add(this.button7);
-            this.Controls.Add(this.button6);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.topSegmentBTN);
+            this.Controls.Add(this.topRightSegmentBTN);
+            this.Controls.Add(this.bottomRightSegmentBTN);
+            this.Controls.Add(this.bottomSegmentBTN);
+            this.Controls.Add(this.bottomLeftSegmentBTN);
+            this.Controls.Add(this.topLeftSegmentBTN);
+            this.Controls.Add(this.middleSegmentBTN);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.MaximizeBox = false;
             this.Name = "MainForm";
-            this.Text = "7Segment2Binary";
+            this.Text = "Seven-Segment to Binary";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -182,17 +198,18 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Button middleSegmentBTN;
+        private System.Windows.Forms.Button topLeftSegmentBTN;
+        private System.Windows.Forms.Button bottomLeftSegmentBTN;
+        private System.Windows.Forms.Button bottomSegmentBTN;
+        private System.Windows.Forms.Button bottomRightSegmentBTN;
+        private System.Windows.Forms.Button topRightSegmentBTN;
+        private System.Windows.Forms.Button topSegmentBTN;
         private System.Windows.Forms.TextBox BinaryTB;
         private System.Windows.Forms.Button CopyBTN;
         private System.Windows.Forms.Button pasteBTN;
         private System.Windows.Forms.TextBox ConstTB;
+        private System.Windows.Forms.ListBox orderLB;
     }
 }
 

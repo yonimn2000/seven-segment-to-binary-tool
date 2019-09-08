@@ -6,15 +6,28 @@ namespace YonatanMankovich.SevenSegmentToBinary
 {
     public partial class MainForm : Form
     {
-        private Button[] buttons;
+        private readonly Button[] segmentButtons;
+        private readonly static string[] segmentNames = { "Middle", "Top left", "Bottom left", "Bottom", "Bottom right", "Top right", "Top" };
 
         public MainForm()
         {
             InitializeComponent();
-            buttons = new Button[] { button1, button2, button3, button4, button5, button6, button7 };
+            segmentButtons = new Button[] { middleSegmentBTN, topLeftSegmentBTN, bottomLeftSegmentBTN,
+                bottomSegmentBTN, bottomRightSegmentBTN, topRightSegmentBTN, topSegmentBTN };
+            orderLB.Items.AddRange(segmentNames);
+            ToolTip toolTip1 = new ToolTip();
+            toolTip1.SetToolTip(orderLB, "Drag and drop items to reorder the binary mapping.");
         }
 
-        private void Button_Click(object sender, EventArgs e)
+        private Button[] GetOrderedSegmentButtonsArray()
+        {
+            Button[] orderedSegmentButtons = new Button[segmentNames.Length];
+            for (int orderLB_Index = 0; orderLB_Index < segmentNames.Length; orderLB_Index++)
+                orderedSegmentButtons[orderLB.Items.IndexOf(segmentNames[orderLB_Index])] = segmentButtons[orderLB_Index];
+            return orderedSegmentButtons;
+        }
+
+        private void SegmentButton_Click(object sender, EventArgs e)
         {
             Button clickedButton = (Button)sender;
             clickedButton.BackColor = clickedButton.BackColor == Color.Black ? Color.Red : Color.Black;
@@ -24,8 +37,13 @@ namespace YonatanMankovich.SevenSegmentToBinary
         private void SetOutputTB()
         {
             string OutText = "";
-            foreach (Button button in buttons)
+            Button[] array = GetOrderedSegmentButtonsArray();
+            for (int i = 0; i < array.Length; i++)
+            {
+                Button button = array[i];
                 OutText += button.BackColor == Color.Red ? "1" : "0";
+            }
+
             BinaryTB.Text = OutText;
         }
 
@@ -42,20 +60,41 @@ namespace YonatanMankovich.SevenSegmentToBinary
 
         private void BinaryTB_TextChanged(object sender, EventArgs e)
         {
+            Button[] orderedSegmentButtons = GetOrderedSegmentButtonsArray();
             if (new System.Text.RegularExpressions.Regex(@"[01]{7}").Match(BinaryTB.Text).Success)
             {
                 BinaryTB.ForeColor = Color.Black;
-                for (int i = 0; i < 7 - BinaryTB.Text.Length; i++)
-                    buttons[6 - i].BackColor = Color.Black;
                 for (int i = 0; i < BinaryTB.Text.Length; i++)
-                    buttons[i].BackColor = BinaryTB.Text[i] == '1' ? Color.Red : Color.Black;
+                    orderedSegmentButtons[i].BackColor = BinaryTB.Text[i] == '1' ? Color.Red : Color.Black;
             }
             else
             {
-                foreach (Button button in buttons)
+                foreach (Button button in orderedSegmentButtons)
                     button.BackColor = Color.Black;
                 BinaryTB.ForeColor = Color.Red;
             }
+        }
+
+        private void OrderLB_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (orderLB.SelectedItem == null) return;
+            orderLB.DoDragDrop(orderLB.SelectedItem, DragDropEffects.Move);
+        }
+
+        private void OrderLB_DragOver(object sender, DragEventArgs e)
+        {
+            e.Effect = DragDropEffects.Move;
+        }
+
+        private void OrderLB_DragDrop(object sender, DragEventArgs e)
+        {
+            Point point = orderLB.PointToClient(new Point(e.X, e.Y));
+            int index = orderLB.IndexFromPoint(point);
+            if (index < 0)
+                index = orderLB.Items.Count - 1;
+            object data = e.Data.GetData(typeof(string));
+            orderLB.Items.Remove(data);
+            orderLB.Items.Insert(index, data);
         }
     }
 }
