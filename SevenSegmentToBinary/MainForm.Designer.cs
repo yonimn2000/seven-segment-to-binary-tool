@@ -74,7 +74,7 @@
             // button4
             // 
             this.button4.BackColor = System.Drawing.Color.Black;
-            this.button4.Location = new System.Drawing.Point(28, 210);
+            this.button4.Location = new System.Drawing.Point(28, 204);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(75, 20);
             this.button4.TabIndex = 3;
@@ -114,7 +114,7 @@
             // BinaryTB
             // 
             this.BinaryTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BinaryTB.Location = new System.Drawing.Point(44, 236);
+            this.BinaryTB.Location = new System.Drawing.Point(44, 230);
             this.BinaryTB.MaxLength = 7;
             this.BinaryTB.Name = "BinaryTB";
             this.BinaryTB.Size = new System.Drawing.Size(79, 29);
@@ -125,9 +125,9 @@
             // CopyBTN
             // 
             this.CopyBTN.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CopyBTN.Location = new System.Drawing.Point(8, 271);
+            this.CopyBTN.Location = new System.Drawing.Point(8, 265);
             this.CopyBTN.Name = "CopyBTN";
-            this.CopyBTN.Size = new System.Drawing.Size(50, 25);
+            this.CopyBTN.Size = new System.Drawing.Size(55, 25);
             this.CopyBTN.TabIndex = 8;
             this.CopyBTN.Text = "Copy";
             this.CopyBTN.UseVisualStyleBackColor = true;
@@ -136,9 +136,9 @@
             // pasteBTN
             // 
             this.pasteBTN.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pasteBTN.Location = new System.Drawing.Point(64, 271);
+            this.pasteBTN.Location = new System.Drawing.Point(68, 265);
             this.pasteBTN.Name = "pasteBTN";
-            this.pasteBTN.Size = new System.Drawing.Size(59, 25);
+            this.pasteBTN.Size = new System.Drawing.Size(55, 25);
             this.pasteBTN.TabIndex = 9;
             this.pasteBTN.Text = "Paste";
             this.pasteBTN.UseVisualStyleBackColor = true;
@@ -148,7 +148,7 @@
             // 
             this.ConstTB.Enabled = false;
             this.ConstTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ConstTB.Location = new System.Drawing.Point(8, 236);
+            this.ConstTB.Location = new System.Drawing.Point(8, 230);
             this.ConstTB.MaxLength = 10;
             this.ConstTB.Name = "ConstTB";
             this.ConstTB.Size = new System.Drawing.Size(37, 29);
@@ -159,7 +159,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(134, 309);
+            this.ClientSize = new System.Drawing.Size(131, 295);
             this.Controls.Add(this.ConstTB);
             this.Controls.Add(this.pasteBTN);
             this.Controls.Add(this.CopyBTN);
