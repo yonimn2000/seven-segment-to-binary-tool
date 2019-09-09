@@ -40,6 +40,7 @@
             this.pasteBTN = new System.Windows.Forms.Button();
             this.ConstTB = new System.Windows.Forms.TextBox();
             this.orderLB = new System.Windows.Forms.ListBox();
+            this.clearBTN = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // middleSegmentBTN
@@ -128,7 +129,7 @@
             this.CopyBTN.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CopyBTN.Location = new System.Drawing.Point(129, 47);
             this.CopyBTN.Name = "CopyBTN";
-            this.CopyBTN.Size = new System.Drawing.Size(115, 24);
+            this.CopyBTN.Size = new System.Drawing.Size(54, 24);
             this.CopyBTN.TabIndex = 8;
             this.CopyBTN.Text = "Copy";
             this.CopyBTN.UseVisualStyleBackColor = true;
@@ -137,9 +138,9 @@
             // pasteBTN
             // 
             this.pasteBTN.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pasteBTN.Location = new System.Drawing.Point(129, 77);
+            this.pasteBTN.Location = new System.Drawing.Point(190, 47);
             this.pasteBTN.Name = "pasteBTN";
-            this.pasteBTN.Size = new System.Drawing.Size(115, 24);
+            this.pasteBTN.Size = new System.Drawing.Size(54, 24);
             this.pasteBTN.TabIndex = 9;
             this.pasteBTN.Text = "Paste";
             this.pasteBTN.UseVisualStyleBackColor = true;
@@ -170,11 +171,23 @@
             this.orderLB.DragOver += new System.Windows.Forms.DragEventHandler(this.OrderLB_DragOver);
             this.orderLB.MouseDown += new System.Windows.Forms.MouseEventHandler(this.OrderLB_MouseDown);
             // 
+            // clearBTN
+            // 
+            this.clearBTN.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.clearBTN.Location = new System.Drawing.Point(130, 77);
+            this.clearBTN.Name = "clearBTN";
+            this.clearBTN.Size = new System.Drawing.Size(114, 25);
+            this.clearBTN.TabIndex = 13;
+            this.clearBTN.Text = "Clear";
+            this.clearBTN.UseVisualStyleBackColor = true;
+            this.clearBTN.Click += new System.EventHandler(this.ClearBTN_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(256, 234);
+            this.Controls.Add(this.clearBTN);
             this.Controls.Add(this.orderLB);
             this.Controls.Add(this.ConstTB);
             this.Controls.Add(this.pasteBTN);
@@ -191,6 +204,8 @@
             this.MaximizeBox = false;
             this.Name = "MainForm";
             this.Text = "Seven-Segment to Binary";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MainForm_FormClosed);
+            this.Load += new System.EventHandler(this.MainForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -210,6 +225,7 @@
         private System.Windows.Forms.Button pasteBTN;
         private System.Windows.Forms.TextBox ConstTB;
         private System.Windows.Forms.ListBox orderLB;
+        private System.Windows.Forms.Button clearBTN;
     }
 }
 

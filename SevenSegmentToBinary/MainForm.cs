@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Drawing;
+using System.IO;
 using System.Windows.Forms;
 
 namespace YonatanMankovich.SevenSegmentToBinary
@@ -7,23 +8,22 @@ namespace YonatanMankovich.SevenSegmentToBinary
     public partial class MainForm : Form
     {
         private readonly Button[] segmentButtons;
-        private readonly static string[] segmentNames = { "Middle", "Top left", "Bottom left", "Bottom", "Bottom right", "Top right", "Top" };
+        private readonly static string[] SEGMENT_NAMES = { "Middle", "Top left", "Bottom left",
+                                                           "Bottom", "Bottom right", "Top right", "Top" };
+        private readonly static string PATH_TO_SAVE = "order.txt";
 
         public MainForm()
         {
             InitializeComponent();
             segmentButtons = new Button[] { middleSegmentBTN, topLeftSegmentBTN, bottomLeftSegmentBTN,
                 bottomSegmentBTN, bottomRightSegmentBTN, topRightSegmentBTN, topSegmentBTN };
-            orderLB.Items.AddRange(segmentNames);
-            ToolTip toolTip1 = new ToolTip();
-            toolTip1.SetToolTip(orderLB, "Drag and drop items to reorder the binary mapping.");
         }
 
         private Button[] GetOrderedSegmentButtonsArray()
         {
-            Button[] orderedSegmentButtons = new Button[segmentNames.Length];
-            for (int orderLB_Index = 0; orderLB_Index < segmentNames.Length; orderLB_Index++)
-                orderedSegmentButtons[orderLB.Items.IndexOf(segmentNames[orderLB_Index])] = segmentButtons[orderLB_Index];
+            Button[] orderedSegmentButtons = new Button[SEGMENT_NAMES.Length];
+            for (int orderLB_Index = 0; orderLB_Index < SEGMENT_NAMES.Length; orderLB_Index++)
+                orderedSegmentButtons[orderLB.Items.IndexOf(SEGMENT_NAMES[orderLB_Index])] = segmentButtons[orderLB_Index];
             return orderedSegmentButtons;
         }
 
@@ -95,6 +95,50 @@ namespace YonatanMankovich.SevenSegmentToBinary
             object data = e.Data.GetData(typeof(string));
             orderLB.Items.Remove(data);
             orderLB.Items.Insert(index, data);
+        }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+            bool loadDefaultOrder = false;
+            if (File.Exists(PATH_TO_SAVE))
+            {
+                string[] lines = File.ReadAllLines(PATH_TO_SAVE);
+                if (lines.Length == SEGMENT_NAMES.Length)
+                {
+                    for (int i = 0; i < lines.Length; i++)
+                    {
+                        // if the line exists in the segment names array
+                        if (Array.IndexOf(SEGMENT_NAMES, lines[i]) >= 0)
+                            orderLB.Items.Add(lines[i]);
+                        else
+                        {
+                            File.Delete(PATH_TO_SAVE);
+                            orderLB.Items.Clear();
+                            loadDefaultOrder = true;
+                            break;
+                        }
+                    }
+                }
+                else
+                    loadDefaultOrder = true;
+            }
+            else
+                loadDefaultOrder = true;
+            if (loadDefaultOrder)
+                orderLB.Items.AddRange(SEGMENT_NAMES);
+        }
+
+        private void MainForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            string output = "";
+            foreach (string orderItem in orderLB.Items)
+                output += orderItem + "\n";
+            File.WriteAllText(PATH_TO_SAVE, output);
+        }
+
+        private void ClearBTN_Click(object sender, EventArgs e)
+        {
+            BinaryTB.Text = "0000000";
         }
     }
 }
