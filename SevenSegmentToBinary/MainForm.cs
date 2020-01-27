@@ -95,6 +95,7 @@ namespace YonatanMankovich.SevenSegmentToBinary
             object data = e.Data.GetData(typeof(string));
             orderLB.Items.Remove(data);
             orderLB.Items.Insert(index, data);
+            SetOutputTB();
         }
 
         private void MainForm_Load(object sender, EventArgs e)
