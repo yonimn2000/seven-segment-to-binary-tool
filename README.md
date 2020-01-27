@@ -6,9 +6,9 @@ This tool is useful when creating custom seven-segment characters for displays t
 
 Select the segments that need to be turned on, copy the binary, and paste in your code.
 
-## Screenshot
+## Screenshots
 
-![screenshot](media/screenshot.png)
+![Screenshots](media/screenshots.gif)
 
 ## How to Configure Mapping for Another Display Model
 
